@@ -1,5 +1,1 @@
-{
-    "featureEnabled": false,
-    "enrollmentEnabled": false,
-    "access": "entitled"
-  }
+{"featureEnabled":true,"enrollmentEnabled":true,"access":"entitled"}
