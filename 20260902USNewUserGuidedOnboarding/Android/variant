@@ -1,0 +1,120 @@
+{
+  "id": "20260902USNewUserGuidedOnboarding_android_variant_a",
+  "start": [
+    {
+      "flowId": "default"
+    }
+  ],
+  "steps": [
+    {
+      "stepId": "run_rollo_tutorial",
+      "type": 100,
+      "showClose": true,
+      "content": {
+        "title": "Make your first animation!",
+        "description": "Trace the dotted lines to make Rollo run!",
+        "videoArtwork": "https://res.cloudinary.com/bnbddu0j/image/upload/Run_Rollo_Run_Thumb_V6.jpg",
+        "project": "https://kur2ghfckvmmqqgb.public.blob.vercel-storage.com/gallery-user_3AB-1788289456125",
+        "secondaryActionTitle": "Discover more",
+        "secondaryAction": "flipaclip://discover"
+      }
+    },
+    {
+      "stepId": "paywall",
+      "type": 102,
+      "showClose": true,
+      "content": {
+        "placementId": "welcome_flow_v2"
+      }
+    },
+    {
+      "stepId": "survey",
+      "type": 101,
+      "content": {
+        "id": "042424_exp_survey",
+        "showClose": false,
+        "hideProgress": true,
+        "startFormId": "intent_screen",
+        "forms": [
+          {
+            "id": "intent_screen",
+            "title": "What brings you to FlipaClip?",
+            "description": "Pick one.",
+            "type": 0,
+            "hideSkip": false,
+            "action": {
+              "nextAction": [
+                {
+                  "formId": "end"
+                }
+              ]
+            },
+            "content": {
+              "style": 0,
+              "singleSelection": true,
+              "options": [
+                {
+                  "id": "intent_learn",
+                  "title": "I want to learn how to animate",
+                  "artwork": "https://s3.amazonaws.com/s.flipaclip.com/articles/MoZcySgktDwSIUO.png"
+                },
+                {
+                  "id": "intent_post",
+                  "title": "I want to post on social media",
+                  "artwork": "https://s3.amazonaws.com/s.flipaclip.com/articles/JJNqvDu33f2zj6s.png"
+                },
+                {
+                  "id": "intent_seeking",
+                  "title": "Seeking a mobile tool for school or work",
+                  "artwork": "https://s3.amazonaws.com/s.flipaclip.com/articles/BKaNfZCcvgqZzxY.png"
+                },
+                {
+                  "id": "intent_content",
+                  "title": "I want to check out cool animated content",
+                  "artwork": "https://s3.amazonaws.com/s.flipaclip.com/articles/4XXkhNmIYp78fVW.png"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "flows": {
+    "default": [
+      {
+        "stepId": "paywall",
+        "proceed": [
+          {
+            "stepId": "survey"
+          }
+        ],
+        "dismiss": {
+          "stepId": "survey"
+        }
+      },
+      {
+        "stepId": "survey",
+        "proceed": [
+          {
+            "stepId": "run_rollo_tutorial"
+          }
+        ],
+        "dismiss": {
+          "stepId": "run_rollo_tutorial"
+        }
+      },
+      {
+        "stepId": "run_rollo_tutorial",
+        "proceed": [
+          {
+            "stepId": "finished"
+          }
+        ],
+        "dismiss": {
+          "stepId": "finished"
+        }
+      }
+    ]
+  }
+}
